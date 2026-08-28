@@ -1,0 +1,868 @@
+{
+  "meta": {
+    "title": "Certification Learning Roadmap",
+    "owner": "Thabo Pali \u2014 Systems Integration Engineer & Full-Stack Developer",
+    "subtitle": "Objectives, concepts, and prerequisite basics, organized by priority \u2014 Year 1 core five, then conditional/optional additions.",
+    "metaNote": "Content reflects official exam guides as of August 2026. AI-200, AI-103, and ITIL Foundation (Version 5) are all newly current \u2014 check <a href=\"https://learn.microsoft.com/en-us/credentials/\">learn.microsoft.com/credentials</a> and <a href=\"https://www.peoplecert.org\">peoplecert.org</a> before registering, since this landscape has shifted twice already since this roadmap was first drafted (AZ-204 retired, ITIL moved to v5). Checked items save in this browser via local storage \u2014 they'll still be here next time you open this link on this device, but won't follow you to a different browser or computer. Content itself lives in <code>data/roadmap.json</code> \u2014 edit that file and redeploy to update anything on this page."
+  },
+  "foundational": {
+    "heading": "Foundational basics worth shoring up before you start",
+    "items": [
+      {
+        "title": "Python fluency.",
+        "body": "Both AI-200 and AI-103 explicitly list Python proficiency as a prerequisite \u2014 your Django/FastAPI background covers the syntax, but review Azure SDK usage patterns specifically (the `azure-*` Python SDK family), since exam scenarios are SDK-call-based, not general scripting."
+      },
+      {
+        "title": "Docker / containers.",
+        "body": "AI-200's first domain and all of CKA (plus CKAD, if you go there) assume solid container fundamentals. No separate cert needed \u2014 but build genuine hands-on comfort: images, Dockerfiles, registries, basic Compose."
+      },
+      {
+        "title": "YAML fluency.",
+        "body": "Terraform (HCL is YAML-adjacent) and Kubernetes manifests are both YAML/declarative-config-heavy. If you're mostly used to C#/JSON-style config, budget a few hours purely on reading and writing YAML confidently."
+      },
+      {
+        "title": "Linux command line.",
+        "body": "CKA and CKAD are both 100% terminal-based with no GUI fallback. Your SharePoint/Windows-server background is real infrastructure experience, but spend deliberate time in a Linux shell (bash, systemctl basics, file permissions) if that's not already daily habit."
+      }
+    ]
+  },
+  "year1": [
+    {
+      "id": "itil",
+      "num": "1",
+      "title": "ITIL Foundation (Version 5)",
+      "issuer": "PeopleCert / AXELOS \u2014 current edition, supersedes ITIL 4",
+      "facts": [
+        "Format: 40 multiple-choice, closed-book",
+        "Duration: 60 min (75 min non-native English)",
+        "Pass mark: 65% (26/40)"
+      ],
+      "estTime": "Est. 2\u20133 weeks (partial overlap with prior ITSM background)",
+      "blocks": [
+        {
+          "heading": "Go straight here \u2014 skip ITIL 4",
+          "type": "prose",
+          "text": "ITIL Foundation (Version 5) is the current edition; ITIL 4 and v5 are running in parallel during the transition, but v3 is not accepted as a prerequisite for upper-level v5 certifications regardless of which one you sit first, so there's no advantage to studying ITIL 4 now. This is a bigger jump from v3 than a \"refresh,\" though \u2014 v5 moved the emphasis away from named practices (where your v3 depth used to count) toward the Service Value System and core terminology, and added entirely new territory: AI, framework alignment, and product/service lifecycle."
+        },
+        {
+          "heading": "Question weighting (7 categories)",
+          "type": "weights",
+          "items": [
+            {
+              "label": "ITIL Service Value System",
+              "pct": 40,
+              "display": "40%"
+            },
+            {
+              "label": "Key ITIL terms & definitions",
+              "pct": 30,
+              "display": "30%"
+            },
+            {
+              "label": "Four Dimensions of Product & Service Mgmt",
+              "pct": 10,
+              "display": "10%"
+            },
+            {
+              "label": "ITIL Product & Service Lifecycle",
+              "pct": 10,
+              "display": "10%"
+            },
+            {
+              "label": "Value Streams: identification & management",
+              "pct": 5,
+              "display": "5%"
+            },
+            {
+              "label": "ITIL and AI",
+              "pct": 2.5,
+              "display": "2.5%"
+            },
+            {
+              "label": "ITIL and other frameworks (DevOps, PRINCE2)",
+              "pct": 2.5,
+              "display": "2.5%"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts to learn",
+          "type": "checklist",
+          "items": [
+            {
+              "id": "itil-1",
+              "text": "Service Value System (SVS) in depth \u2014 guiding principles, governance, service value chain, continual improvement (now the dominant domain, was ~1 of many in v3/v4)"
+            },
+            {
+              "id": "itil-2",
+              "text": "Core ITSM terminology: Service, Value, Cost, Utility, Warranty, Risk, Output vs Outcome"
+            },
+            {
+              "id": "itil-3",
+              "text": "Four Dimensions Model (organizations & people, information & technology, partners & suppliers, value streams & processes)"
+            },
+            {
+              "id": "itil-4",
+              "text": "Product and service lifecycle \u2014 planning through retirement (new in v5)"
+            },
+            {
+              "id": "itil-5",
+              "text": "Value streams: flow-based thinking and mapping (new in v5)"
+            },
+            {
+              "id": "itil-6",
+              "text": "ITIL and AI \u2014 AI as a supporting operational capability (new in v5)"
+            },
+            {
+              "id": "itil-7",
+              "text": "ITIL's relationship to DevOps and PRINCE2 (new framing in v5)"
+            },
+            {
+              "id": "itil-8",
+              "text": "Note: named practices (Incident, Problem, Change Enablement, Service Desk, etc.) are no longer individually tested at Foundation level \u2014 deprioritize deep practice study versus v4"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official syllabus: search \"ITIL Foundation Version 5 Candidate Syllabus\" via <a href=\"https://www.peoplecert.org\">peoplecert.org</a> or <a href=\"https://www.axelos.com\">axelos.com</a>. Confirm current availability in your region \u2014 rollout has been phased."
+        }
+      ]
+    },
+    {
+      "id": "ai200",
+      "num": "2",
+      "title": "AI-200: Azure AI Cloud Developer Associate",
+      "issuer": "Microsoft \u2014 successor to the retired AZ-204",
+      "facts": [
+        "Format: Microsoft Learn proctored exam",
+        "Pass mark: 700 / 1000"
+      ],
+      "estTime": "Est. 6\u20138 weeks (new Azure surface area)",
+      "blocks": [
+        {
+          "heading": "Prerequisites Microsoft names explicitly",
+          "type": "prose",
+          "text": "Azure SDKs (incl. Python), Azure data management services, Azure monitoring/troubleshooting, messaging & eventing, vector databases, and containerized applications on Azure. This is the exam where your Python push and your Docker practice both pay off directly."
+        },
+        {
+          "heading": "Skill domain weighting",
+          "type": "weights",
+          "items": [
+            {
+              "label": "AI solutions via Azure data management services",
+              "pct": 28,
+              "display": "25\u201330%"
+            },
+            {
+              "label": "Containerized solutions on Azure",
+              "pct": 23,
+              "display": "20\u201325%"
+            },
+            {
+              "label": "Connect to and consume Azure services",
+              "pct": 23,
+              "display": "20\u201325%"
+            },
+            {
+              "label": "Secure, monitor & troubleshoot solutions",
+              "pct": 23,
+              "display": "20\u201325%"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts by domain",
+          "type": "checklist-grouped",
+          "groups": [
+            {
+              "title": "Containers",
+              "items": [
+                {
+                  "id": "ai200-1",
+                  "text": "Build/store/version images with Azure Container Registry (ACR) + ACR Tasks"
+                },
+                {
+                  "id": "ai200-2",
+                  "text": "Deploy containers to Azure App Service (env vars, secrets)"
+                },
+                {
+                  "id": "ai200-3",
+                  "text": "Azure Container Apps \u2014 environments, revisions, KEDA event-driven scaling"
+                },
+                {
+                  "id": "ai200-4",
+                  "text": "Deploy/manage AKS workloads via manifest files; monitor & troubleshoot AKS"
+                }
+              ]
+            },
+            {
+              "title": "Data management for AI",
+              "items": [
+                {
+                  "id": "ai200-5",
+                  "text": "Cosmos DB for NoSQL \u2014 SDK queries, RU optimization, vector similarity search, change feed"
+                },
+                {
+                  "id": "ai200-6",
+                  "text": "Azure Database for PostgreSQL \u2014 SDK queries, schema/indexing, vector workloads, RAG patterns"
+                },
+                {
+                  "id": "ai200-7",
+                  "text": "Azure Managed Redis \u2014 caching/expiration/invalidation, vector indexing"
+                }
+              ]
+            },
+            {
+              "title": "Connecting services",
+              "items": [
+                {
+                  "id": "ai200-8",
+                  "text": "Azure Service Bus \u2014 queue & process operations"
+                },
+                {
+                  "id": "ai200-9",
+                  "text": "Azure Event Grid \u2014 event-driven workflows"
+                },
+                {
+                  "id": "ai200-10",
+                  "text": "Azure Functions \u2014 triggers, bindings, serverless APIs, deployment"
+                }
+              ]
+            },
+            {
+              "title": "Security, monitoring & troubleshooting",
+              "items": [
+                {
+                  "id": "ai200-11",
+                  "text": "Azure Key Vault \u2014 secrets, rotation, retrieval"
+                },
+                {
+                  "id": "ai200-12",
+                  "text": "Azure App Configuration"
+                },
+                {
+                  "id": "ai200-13",
+                  "text": "OpenTelemetry SDKs for distributed tracing"
+                },
+                {
+                  "id": "ai200-14",
+                  "text": "KQL (Kusto Query Language) for logs & metrics"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official study guide: <a href=\"https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-200\">learn.microsoft.com \u2014 AI-200 study guide</a>. Free hands-on paths via Microsoft Learn modules for each service listed above."
+        }
+      ]
+    },
+    {
+      "id": "ai103",
+      "num": "3",
+      "title": "AI-103: Azure AI App and Agent Developer Associate",
+      "issuer": "Microsoft \u2014 successor to the retired AI-102",
+      "facts": [
+        "Format: Microsoft Learn proctored exam",
+        "Pass mark: 700 / 1000"
+      ],
+      "estTime": "Est. 6\u20138 weeks (after AI-200)",
+      "blocks": [
+        {
+          "heading": "Prerequisites Microsoft names explicitly",
+          "type": "prose",
+          "text": "Experience building apps in Python, plus familiarity with general AI capabilities, generative AI concepts, and Azure services. Take this after AI-200 \u2014 it assumes the Azure app-development foundation and layers AI-specific building on top."
+        },
+        {
+          "heading": "Skill domain weighting",
+          "type": "weights",
+          "items": [
+            {
+              "label": "Implement generative AI and agentic solutions",
+              "pct": 33,
+              "display": "30\u201335%"
+            },
+            {
+              "label": "Plan and manage an Azure AI solution",
+              "pct": 28,
+              "display": "25\u201330%"
+            },
+            {
+              "label": "Implement computer vision solutions",
+              "pct": 13,
+              "display": "10\u201315%"
+            },
+            {
+              "label": "Implement text analysis solutions",
+              "pct": 13,
+              "display": "10\u201315%"
+            },
+            {
+              "label": "Implement information extraction solutions",
+              "pct": 13,
+              "display": "10\u201315%"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts by domain",
+          "type": "checklist-grouped",
+          "groups": [
+            {
+              "title": "Planning & management",
+              "items": [
+                {
+                  "id": "ai103-1",
+                  "text": "Choosing the right Azure AI Foundry services for a given generative AI/agent scenario"
+                },
+                {
+                  "id": "ai103-2",
+                  "text": "Setting up AI solutions in Foundry; managing, monitoring, securing AI systems"
+                },
+                {
+                  "id": "ai103-3",
+                  "text": "Responsible AI principles applied to generative and agentic systems"
+                }
+              ]
+            },
+            {
+              "title": "Generative AI & agents (largest domain)",
+              "items": [
+                {
+                  "id": "ai103-4",
+                  "text": "Build generative applications using Azure AI Foundry"
+                },
+                {
+                  "id": "ai103-5",
+                  "text": "Build agents in Foundry (orchestration, tools, grounding)"
+                },
+                {
+                  "id": "ai103-6",
+                  "text": "Optimize and operationalize generative AI systems in production"
+                }
+              ]
+            },
+            {
+              "title": "Vision, text & extraction",
+              "items": [
+                {
+                  "id": "ai103-7",
+                  "text": "Image and video generation; multimodal understanding workflows"
+                },
+                {
+                  "id": "ai103-8",
+                  "text": "Language model text analysis; speech solutions"
+                },
+                {
+                  "id": "ai103-9",
+                  "text": "Retrieval & grounding pipelines (RAG); document content extraction"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official study guide: <a href=\"https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-103\">learn.microsoft.com \u2014 AI-103 study guide</a>."
+        }
+      ]
+    },
+    {
+      "id": "terraform",
+      "num": "4",
+      "title": "HashiCorp Terraform Associate (004)",
+      "issuer": "HashiCorp (an IBM company)",
+      "facts": [
+        "Format: Multiple choice, online proctored",
+        "Version: 004 (003 retired)"
+      ],
+      "estTime": "Est. 3\u20134 weeks (no prior IaC needed)",
+      "blocks": [
+        {
+          "heading": "Ground this one before you sit it",
+          "type": "prose",
+          "text": "Unlike the rest of this roadmap, you don't currently use Terraform anywhere \u2014 not at work, not freelance. A cert with no practice behind it is exactly the weak signal this whole plan has otherwise avoided. Fix: provision one real thing with it before or during study \u2014 the hosting for a freelance client project, or even a personal side project \u2014 so the credential is backed by something you actually did, not just a multiple-choice pass. No formal prerequisite otherwise, and the exam is knowledge-based rather than hands-on like CKA. Your Nintex/UiPath instinct \u2014 defining a desired end-state and letting a tool reconcile it \u2014 is conceptually the same idea Terraform applies to infrastructure, so the mental model will feel familiar even though the syntax (HCL) is new."
+        },
+        {
+          "heading": "Exam content areas (8 domains, official)",
+          "type": "checklist",
+          "items": [
+            {
+              "id": "tf-1",
+              "text": "<b>Infrastructure as Code with Terraform</b> \u2014 concepts, advantages, multi-cloud capability"
+            },
+            {
+              "id": "tf-2",
+              "text": "<b>Terraform fundamentals</b> \u2014 installing/using providers, provider role, managing state"
+            },
+            {
+              "id": "tf-3",
+              "text": "<b>Core workflow</b> \u2014 init, validate, plan, apply, destroy, fmt"
+            },
+            {
+              "id": "tf-4",
+              "text": "<b>Configuration</b> \u2014 resources, data sources, variables, outputs, complex types, expressions, functions, custom validation"
+            },
+            {
+              "id": "tf-5",
+              "text": "<b>Modules</b> \u2014 sourcing, variable scope, versioning"
+            },
+            {
+              "id": "tf-6",
+              "text": "<b>State management</b> \u2014 local/remote backends, state locking, drift"
+            },
+            {
+              "id": "tf-7",
+              "text": "<b>Infrastructure maintenance</b> \u2014 importing existing infra, inspecting state via CLI, verbose logging"
+            },
+            {
+              "id": "tf-8",
+              "text": "<b>HCP Terraform</b> \u2014 workspaces/projects, collaboration features, integrations"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official exam content list: <a href=\"https://developer.hashicorp.com/terraform/tutorials/certification-004/associate-review-004\">developer.hashicorp.com \u2014 Terraform Associate 004 review</a>. Confirm current exam fee at registration \u2014 HashiCorp/IBM pricing has shifted before."
+        }
+      ]
+    },
+    {
+      "id": "cka",
+      "num": "5",
+      "title": "Certified Kubernetes Administrator (CKA)",
+      "issuer": "Linux Foundation / CNCF",
+      "facts": [
+        "Format: 100% hands-on, command-line, proctored",
+        "Duration: 2 hours",
+        "Cost: $445 (1 free retake)"
+      ],
+      "estTime": "Est. 8\u201310 weeks minimum",
+      "blocks": [
+        {
+          "heading": "Why this comes last, and why Troubleshooting is your edge",
+          "type": "prose",
+          "text": "This is the stretch goal for a reason \u2014 it's purely practical, no multiple choice, and requires real lab time. The single largest domain is Troubleshooting (30%), which plays directly to fifteen years of Tier 1/Tier 2 support and root-cause work \u2014 that instinct transfers, the syntax is what's new."
+        },
+        {
+          "heading": "Domain weighting",
+          "type": "weights",
+          "items": [
+            {
+              "label": "Troubleshooting",
+              "pct": 30,
+              "display": "30%"
+            },
+            {
+              "label": "Cluster Architecture, Installation & Config",
+              "pct": 25,
+              "display": "25%"
+            },
+            {
+              "label": "Services & Networking",
+              "pct": 20,
+              "display": "20%"
+            },
+            {
+              "label": "Workloads & Scheduling",
+              "pct": 15,
+              "display": "15%"
+            },
+            {
+              "label": "Storage",
+              "pct": 10,
+              "display": "10%"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts by domain",
+          "type": "checklist",
+          "items": [
+            {
+              "id": "cka-1",
+              "text": "<b>Cluster:</b> kubeadm setup, RBAC, etcd backup & restore, node maintenance"
+            },
+            {
+              "id": "cka-2",
+              "text": "<b>Workloads:</b> Pods, Deployments, ReplicaSets, DaemonSets, scheduling & scaling"
+            },
+            {
+              "id": "cka-3",
+              "text": "<b>Networking:</b> Services (ClusterIP/NodePort/LoadBalancer), Ingress, Gateway API, NetworkPolicy"
+            },
+            {
+              "id": "cka-4",
+              "text": "<b>Storage:</b> PersistentVolumes, PersistentVolumeClaims, StorageClasses"
+            },
+            {
+              "id": "cka-5",
+              "text": "<b>Troubleshooting:</b> cluster, node, application, and networking failure diagnosis via kubectl/logs"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official curriculum & candidate handbook: <a href=\"https://www.cncf.io/training/certification/cka/\">cncf.io \u2014 CKA</a>. Practice exams via <a href=\"https://killer.sh\">killer.sh</a> (bundled with registration) are the closest simulation of the real exam's difficulty."
+        }
+      ]
+    }
+  ],
+  "year2Intro": {
+    "heading": "Year 2+ \u2014 Conditional & optional",
+    "text": "These four are real, respected credentials \u2014 not padding \u2014 but each is a bet tied to a specific direction rather than a default next move. Pursue one only once its trigger condition is actually true for you; otherwise the core five above is the complete, coherent plan."
+  },
+  "year2plus": [
+    {
+      "id": "oscp",
+      "num": "A",
+      "title": "OSCP (OffSec Certified Professional)",
+      "issuer": "OffSec \u2014 the credible security credential, not CEH",
+      "facts": [
+        "Format: 23h45m hands-on exam + 24h report",
+        "Scoring: 100 pts, pass \u226570",
+        "Tooling: Kali Linux, OpenVPN"
+      ],
+      "trigger": "pursue only if application/security work becomes a dedicated direction beyond the Postgraduate Diploma's Information Security and Ethical Hacking modules. This is a 3+ month, full-time-equivalent commitment \u2014 not a side credential, and not a substitute for CEH, which stays off this roadmap entirely regardless of tier.",
+      "blocks": [
+        {
+          "heading": "Scoring structure",
+          "type": "weights",
+          "items": [
+            {
+              "label": "Three standalone machines (initial access + privesc)",
+              "pct": 60,
+              "display": "60 pts"
+            },
+            {
+              "label": "Active Directory set (3-machine chain)",
+              "pct": 40,
+              "display": "40 pts"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts to learn",
+          "type": "checklist",
+          "items": [
+            {
+              "id": "oscp-1",
+              "text": "Enumeration methodology \u2014 systematic reconnaissance before exploitation"
+            },
+            {
+              "id": "oscp-2",
+              "text": "Web application exploitation fundamentals"
+            },
+            {
+              "id": "oscp-3",
+              "text": "Linux and Windows privilege escalation techniques"
+            },
+            {
+              "id": "oscp-4",
+              "text": "Active Directory attack chains \u2014 kerberoasting, lateral movement, domain admin paths"
+            },
+            {
+              "id": "oscp-5",
+              "text": "Buffer overflow basics"
+            },
+            {
+              "id": "oscp-6",
+              "text": "Professional report writing \u2014 the exam is graded on documentation, not just access"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official guide: <a href=\"https://help.offsec.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide\">help.offsec.com \u2014 OSCP Exam Guide</a>."
+        }
+      ],
+      "shortLabel": "OSCP"
+    },
+    {
+      "id": "awssaa",
+      "num": "B",
+      "title": "AWS Certified Solutions Architect \u2013 Associate (SAA-C03)",
+      "issuer": "Amazon Web Services",
+      "facts": [
+        "Format: 65 questions (50 scored)",
+        "Pass mark: 720 / 1000"
+      ],
+      "trigger": "pursue only if you want reach beyond Microsoft-stack-aligned companies, or a specific opportunity is explicitly AWS-native. You've already committed to Azure via AI-200/AI-103 \u2014 don't duplicate cloud fundamentals for the sake of a second logo unless there's a real reason.",
+      "blocks": [
+        {
+          "heading": "Domain weighting",
+          "type": "weights",
+          "items": [
+            {
+              "label": "Design Secure Architectures",
+              "pct": 30,
+              "display": "30%"
+            },
+            {
+              "label": "Design Resilient Architectures",
+              "pct": 26,
+              "display": "26%"
+            },
+            {
+              "label": "Design High-Performing Architectures",
+              "pct": 24,
+              "display": "24%"
+            },
+            {
+              "label": "Design Cost-Optimized Architectures",
+              "pct": 20,
+              "display": "20%"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts to learn",
+          "type": "checklist",
+          "items": [
+            {
+              "id": "saa-1",
+              "text": "IAM policies, roles, and least-privilege design"
+            },
+            {
+              "id": "saa-2",
+              "text": "VPC networking, security groups, subnetting"
+            },
+            {
+              "id": "saa-3",
+              "text": "S3 storage classes and lifecycle policies"
+            },
+            {
+              "id": "saa-4",
+              "text": "EC2, Auto Scaling, and Elastic Load Balancing"
+            },
+            {
+              "id": "saa-5",
+              "text": "RDS and DynamoDB \u2014 when to use which"
+            },
+            {
+              "id": "saa-6",
+              "text": "Multi-AZ and disaster-recovery design patterns"
+            },
+            {
+              "id": "saa-7",
+              "text": "Caching with CloudFront and ElastiCache"
+            },
+            {
+              "id": "saa-8",
+              "text": "Cost optimization \u2014 Reserved Instances, Spot, Savings Plans"
+            },
+            {
+              "id": "saa-9",
+              "text": "AWS Well-Architected Framework pillars"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official guide: <a href=\"https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html\">docs.aws.amazon.com \u2014 SAA-C03</a>."
+        }
+      ],
+      "shortLabel": "AWS SAA"
+    },
+    {
+      "id": "ckad",
+      "num": "C",
+      "title": "Certified Kubernetes Application Developer (CKAD)",
+      "issuer": "Linux Foundation / CNCF",
+      "facts": [
+        "Format: 100% hands-on, command-line",
+        "Duration: 2 hours",
+        "Cost: $445"
+      ],
+      "trigger": "pursue only if more of your target work leans app-development-on-Kubernetes rather than cluster operations. Significant overlap with CKA \u2014 treat this as an add-on once CKA is done, never a substitute for it.",
+      "blocks": [
+        {
+          "heading": "Domain weighting",
+          "type": "weights",
+          "items": [
+            {
+              "label": "Application Environment, Config & Security",
+              "pct": 25,
+              "display": "25%"
+            },
+            {
+              "label": "Application Design and Build",
+              "pct": 20,
+              "display": "20%"
+            },
+            {
+              "label": "Application Deployment",
+              "pct": 20,
+              "display": "20%"
+            },
+            {
+              "label": "Services and Networking",
+              "pct": 20,
+              "display": "20%"
+            },
+            {
+              "label": "Observability and Maintenance",
+              "pct": 15,
+              "display": "15%"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts to learn",
+          "type": "checklist",
+          "items": [
+            {
+              "id": "ckad-1",
+              "text": "Multi-container Pod patterns (sidecar, init containers)"
+            },
+            {
+              "id": "ckad-2",
+              "text": "Helm and Kustomize for deployment management"
+            },
+            {
+              "id": "ckad-3",
+              "text": "Health checks and readiness/liveness probes"
+            },
+            {
+              "id": "ckad-4",
+              "text": "ConfigMaps, Secrets, ServiceAccounts, SecurityContexts"
+            },
+            {
+              "id": "ckad-5",
+              "text": "Resource requests and limits"
+            },
+            {
+              "id": "ckad-6",
+              "text": "Debugging running workloads via logs and exec"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official page: <a href=\"https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/\">training.linuxfoundation.org \u2014 CKAD</a>."
+        }
+      ],
+      "shortLabel": "CKAD"
+    },
+    {
+      "id": "vault",
+      "num": "D",
+      "title": "HashiCorp Certified: Vault Associate (003)",
+      "issuer": "HashiCorp (an IBM company)",
+      "facts": [
+        "Format: 57 questions, 60 min",
+        "Delivery: Online proctored (Certiverse)",
+        "Validity: 2 years"
+      ],
+      "trigger": "the natural pairing if both the security direction and Terraform land for real \u2014 secrets management sits exactly at that intersection. Skip if neither becomes an actual focus; don't collect it just because it exists.",
+      "blocks": [
+        {
+          "heading": "Domain weighting (9 domains)",
+          "type": "weights",
+          "items": [
+            {
+              "label": "Secrets Engines",
+              "pct": 14,
+              "display": "14%"
+            },
+            {
+              "label": "Authentication Methods",
+              "pct": 13,
+              "display": "13%"
+            },
+            {
+              "label": "Vault Policies",
+              "pct": 13,
+              "display": "13%"
+            },
+            {
+              "label": "Vault Tokens",
+              "pct": 13,
+              "display": "13%"
+            },
+            {
+              "label": "Encryption as a Service",
+              "pct": 11,
+              "display": "11%"
+            },
+            {
+              "label": "Vault Deployment Architecture",
+              "pct": 11,
+              "display": "11%"
+            },
+            {
+              "label": "Vault Leases",
+              "pct": 10,
+              "display": "10%"
+            },
+            {
+              "label": "Vault Architecture Fundamentals",
+              "pct": 8,
+              "display": "8%"
+            },
+            {
+              "label": "Access Management Architecture",
+              "pct": 7,
+              "display": "7%"
+            }
+          ]
+        },
+        {
+          "heading": "Concepts to learn",
+          "type": "checklist",
+          "items": [
+            {
+              "id": "vault-1",
+              "text": "Authentication methods (AppRole, LDAP, and others)"
+            },
+            {
+              "id": "vault-2",
+              "text": "Policy-as-code for access control"
+            },
+            {
+              "id": "vault-3",
+              "text": "Token lifecycle and management"
+            },
+            {
+              "id": "vault-4",
+              "text": "Dynamic secrets and lease renewal/revocation"
+            },
+            {
+              "id": "vault-5",
+              "text": "Secrets engines \u2014 KV, database, cloud provider engines"
+            },
+            {
+              "id": "vault-6",
+              "text": "Encryption as a Service (the Transit engine)"
+            },
+            {
+              "id": "vault-7",
+              "text": "Vault architecture \u2014 storage backends, high availability"
+            },
+            {
+              "id": "vault-8",
+              "text": "Deployment topology and access management integration"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "type": "prose",
+          "text": "Official guide: <a href=\"https://developer.hashicorp.com/vault/tutorials/associate-cert\">developer.hashicorp.com \u2014 Vault Associate certification</a>."
+        }
+      ],
+      "shortLabel": "Vault Associate"
+    }
+  ],
+  "footer": "Built from official Microsoft Learn, HashiCorp, CNCF, OffSec, AWS, and PeopleCert/AXELOS sources, August 2026. Exam formats, weightings, and pricing change \u2014 reconfirm against the official source before registering, especially for AI-200/AI-103/ITIL v5 given how new they are."
+}
